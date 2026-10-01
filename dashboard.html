@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>StudentHub</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link active" data-section="dashboard">Dashboard</a>
+                <a href="#" class="nav-link" data-section="assignments">Assignments</a>
+                <a href="#" class="nav-link" data-section="resources">Resources</a>
+                <a href="#" class="nav-link" data-section="profile">Profile</a>
+            </div>
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                <span class="user-name">John Doe</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Quick Stats</h3>
+                <div class="stat-item">
+                    <span class="stat-label">GPA</span>
+                    <span class="stat-value">3.85</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Attendance</span>
+                    <span class="stat-value">92%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Completed Tasks</span>
+                    <span class="stat-value">24/30</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Upcoming Deadlines</h3>
+                <div class="deadline-item">
+                    <small>Today</small>
+                    <p>Math Assignment</p>
+                </div>
+                <div class="deadline-item">
+                    <small>Tomorrow</small>
+                    <p>Physics Project</p>
+                </div>
+                <div class="deadline-item">
+                    <small>In 3 days</small>
+                    <p>History Essay</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header Section -->
+            <div class="header-section">
+                <div class="welcome-message">
+                    <h1>Welcome Back, John!</h1>
+                    <p id="current-date"></p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Sections -->
+            <section id="dashboard" class="section active">
+                <!-- Upcoming Events -->
+                <div class="section-header">
+                    <h2>Upcoming Events</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="cards-grid events-grid">
+                    <div class="card event-card">
+                        <div class="card-header event">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Class Seminar</h3>
+                            <p class="event-date"><i class="fas fa-clock"></i> Oct 5, 2026 - 2:00 PM</p>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Auditorium Hall A</p>
+                            <span class="badge badge-primary">Mandatory</span>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="card-header event">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Library Workshop</h3>
+                            <p class="event-date"><i class="fas fa-clock"></i> Oct 6, 2026 - 3:30 PM</p>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Central Library</p>
+                            <span class="badge badge-success">Optional</span>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="card-header event">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Group Project Meeting</h3>
+                            <p class="event-date"><i class="fas fa-clock"></i> Oct 7, 2026 - 4:00 PM</p>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Study Room 5</p>
+                            <span class="badge badge-warning">Important</span>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="card-header event">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Lab Session</h3>
+                            <p class="event-date"><i class="fas fa-clock"></i> Oct 8, 2026 - 1:00 PM</p>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Science Lab</p>
+                            <span class="badge badge-primary">Mandatory</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assignments -->
+                <div class="section-header" style="margin-top: 40px;">
+                    <h2>Assignments</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="cards-grid assignments-grid">
+                    <div class="card assignment-card">
+                        <div class="card-header assignment">
+                            <div class="progress-circle" style="--progress: 75;">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Mathematics - Calculus</h3>
+                            <p class="due-date"><i class="fas fa-hourglass-end"></i> Due: Oct 5, 2026</p>
+                            <p class="assignment-description">Complete exercises 1-50 from Chapter 5</p>
+                            <div class="card-footer">
+                                <button class="btn-small btn-primary">Submit</button>
+                                <button class="btn-small btn-secondary">Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card assignment-card">
+                        <div class="card-header assignment">
+                            <div class="progress-circle" style="--progress: 30;">
+                                <span>30%</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Physics - Laboratory Report</h3>
+                            <p class="due-date"><i class="fas fa-hourglass-end"></i> Due: Oct 7, 2026</p>
+                            <p class="assignment-description">Write a comprehensive lab report with graphs</p>
+                            <div class="card-footer">
+                                <button class="btn-small btn-primary">Submit</button>
+                                <button class="btn-small btn-secondary">Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card assignment-card">
+                        <div class="card-header assignment">
+                            <div class="progress-circle" style="--progress: 100;">
+                                <span>100%</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>English - Essay</h3>
+                            <p class="due-date"><i class="fas fa-hourglass-end"></i> Due: Oct 3, 2026</p>
+                            <p class="assignment-description">Analytical essay on Shakespeare's works</p>
+                            <div class="card-footer">
+                                <span class="badge badge-success">Submitted</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card assignment-card">
+                        <div class="card-header assignment">
+                            <div class="progress-circle" style="--progress: 60;">
+                                <span>60%</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>History - Research Project</h3>
+                            <p class="due-date"><i class="fas fa-hourglass-end"></i> Due: Oct 10, 2026</p>
+                            <p class="assignment-description">Research and present on historical events</p>
+                            <div class="card-footer">
+                                <button class="btn-small btn-primary">Submit</button>
+                                <button class="btn-small btn-secondary">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Announcements -->
+                <div class="section-header" style="margin-top: 40px;">
+                    <h2>Announcements</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="announcements-list">
+                    <div class="announcement-item">
+                        <div class="announcement-icon alert">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="announcement-content">
+                            <h4>Class Schedule Change</h4>
+                            <p>Physics class on Friday is rescheduled to Thursday 2:00 PM due to lab maintenance.</p>
+                            <small class="announcement-time">2 hours ago</small>
+                        </div>
+                    </div>
+
+                    <div class="announcement-item">
+                        <div class="announcement-icon info">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="announcement-content">
+                            <h4>Mid-semester Exam Dates Released</h4>
+                            <p>The mid-semester examination schedule is now available on the portal. Please check your exam timetable.</p>
+                            <small class="announcement-time">5 hours ago</small>
+                        </div>
+                    </div>
+
+                    <div class="announcement-item">
+                        <div class="announcement-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="announcement-content">
+                            <h4>Grade Results Published</h4>
+                            <p>First assignment grades have been published. You can view your results in the grades section.</p>
+                            <small class="announcement-time">1 day ago</small>
+                        </div>
+                    </div>
+
+                    <div class="announcement-item">
+                        <div class="announcement-icon warning">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="announcement-content">
+                            <h4>Scholarship Opportunity</h4>
+                            <p>Applications are open for merit-based scholarships. Interested students can apply through the portal.</p>
+                            <small class="announcement-time">2 days ago</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Study Resources -->
+                <div class="section-header" style="margin-top: 40px;">
+                    <h2>Study Resources</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="cards-grid resources-grid">
+                    <div class="card resource-card">
+                        <div class="card-header resource">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Calculus Fundamentals</h3>
+                            <p class="resource-type">Video Lecture</p>
+                            <p class="resource-description">Introduction to derivatives and integrals</p>
+                            <p class="resource-author">By Prof. Smith</p>
+                            <button class="btn-small btn-primary">Watch Now</button>
+                        </div>
+                    </div>
+
+                    <div class="card resource-card">
+                        <div class="card-header resource">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Physics Study Guide</h3>
+                            <p class="resource-type">PDF Document</p>
+                            <p class="resource-description">Comprehensive study material for midterms</p>
+                            <p class="resource-author">Course Material</p>
+                            <button class="btn-small btn-primary">Download</button>
+                        </div>
+                    </div>
+
+                    <div class="card resource-card">
+                        <div class="card-header resource">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>English Literature Notes</h3>
+                            <p class="resource-type">Study Notes</p>
+                            <p class="resource-description">Detailed analysis of major literary works</p>
+                            <p class="resource-author">Class Notes</p>
+                            <button class="btn-small btn-primary">View</button>
+                        </div>
+                    </div>
+
+                    <div class="card resource-card">
+                        <div class="card-header resource">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Online Research Database</h3>
+                            <p class="resource-type">External Resource</p>
+                            <p class="resource-description">Access academic journals and papers</p>
+                            <p class="resource-author">Library Portal</p>
+                            <button class="btn-small btn-primary">Access</button>
+                        </div>
+                    </div>
+
+                    <div class="card resource-card">
+                        <div class="card-header resource">
+                            <i class="fas fa-quiz"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Practice Questions</h3>
+                            <p class="resource-type">Quiz</p>
+                            <p class="resource-description">Mathematics problem sets with solutions</p>
+                            <p class="resource-author">Course Content</p>
+                            <button class="btn-small btn-primary">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <div class="card resource-card">
+                        <div class="card-header resource">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Guest Lecture</h3>
+                            <p class="resource-type">Audio Recording</p>
+                            <p class="resource-description">Industry expert presentation on modern concepts</p>
+                            <p class="resource-author">Special Session</p>
+                            <button class="btn-small btn-primary">Listen</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
